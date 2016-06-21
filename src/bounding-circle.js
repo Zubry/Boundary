@@ -41,7 +41,7 @@ function intersectsCircle([c, r], [a, b]) {
   // or a (if the projection is less than 0)
   // or b (if the projection is past the end of the line)
   const closest = (function closest() {
-    const magnitude = projection.abs();
+    const magnitude = aToCenter.dot(segment) / segment.abs();
 
     if (magnitude < 0) {
       return a;

@@ -42,3 +42,25 @@ describe('BoundingCircle', function() {
     });
   });
 });
+
+describe('BoundingCircle', function() {
+  describe('#intersect(circle)', function () {
+    it('should check if a circle intersects with a rectangle', function () {
+      const a = new BoundingRectangle({
+        center: new Position({ x: 195, y: 200 }),
+        rotation: new Position(0),
+        height: 24,
+        width: 192,
+      });
+
+      const radius = 15;
+      const index = 7;
+
+      const c = new BoundingCircle({ center: new Position({ x: 45, y: 177.5}), radius: 12.5 });
+
+      const test2 = a.intersects(c);
+
+      test2.should.not.be.true();
+    });
+  });
+});
