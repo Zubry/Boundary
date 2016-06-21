@@ -104,6 +104,7 @@ export default class BoundingRectangle extends BoundingRectangleRecord {
       new Position({ x: 0, y: this.height }),
     ])
     .map((point) => point
+      .shift(new Position({ x: this.width / -2, y: this.height / -2 }))
       .shift(this.midpoint)
       .rotateAround(this.rotation, this.midpoint)
     );
