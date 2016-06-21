@@ -1,4 +1,4 @@
-import { Record as record } from 'immutable';
+import { Record as record, List as list } from 'immutable';
 import check, { assert } from 'check-types';
 
 import BoundingRectangle from './bounding-rectangle';
@@ -103,7 +103,7 @@ export default class BoundingCircle extends BoundingCircleRecord {
       const r = boundary.toCoordinateList();
 
       const intersectingCircles = r
-        .zip(r.rest().concat(r.first()))
+        .zip(r.rest().push(r.first()))
         .some((segment) => intersectsCircle([this.center, this.radius], segment));
 
       return pointInRectangle(this.center, boundary) || intersectingCircles;

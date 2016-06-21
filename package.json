@@ -1,6 +1,6 @@
 {
   "name": "@zubry/boundary",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Boundary module",
   "main": "lib/index.js",
   "scripts": {
